@@ -5,16 +5,23 @@ async function fetchBooksData() {
     return data.books;
 }
 
+// Sorting configuration
+let isTitleAsc = true;
+let isYearAsc = true;
+
+//Temp holder array to store the books data to
+// avoid mutating the original array data
+let booksData = [];
+
+let originalBooksData = [];
+
+//Create the table and populate data into it
 async function generateTable() {
     const headerRow = document.getElementById('headerRow');
-    const tableBody = document.getElementById('tableBody');
 
-    // Sorting configuration
-    let isTitleAsc = true;
-    let isYearAsc = true;
-
-    // Fetch book data from the external JSON file
-    const booksData = await fetchBooksData();
+    // Fetch original book data from the external JSON file
+    originalBooksData = await fetchBooksData();
+    booksData = [...originalBooksData];
 
     // Create table headers
     for (const key in booksData[0]) {
@@ -35,44 +42,61 @@ async function generateTable() {
         headerRow.appendChild(th);
         renderTable();
     }
+}
 
-    // Sort the data based on the sorting configuration
-    function sortData(key) {
-        booksData.sort((a, b) => {
-            const valueA = a[key].toUpperCase();
-            const valueB = b[key].toUpperCase();
+// Sort the data based on the sorting configuration
+function sortData(key) {
+    booksData.sort((a, b) => {
+        const valueA = a[key].toUpperCase();
+        const valueB = b[key].toUpperCase();
 
-            if (key === 'title') {
-                return isTitleAsc ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
-            } else if (key === 'year') {
-                return isYearAsc ? parseInt(valueB) - parseInt(valueA) : parseInt(valueA) - parseInt(valueB);
-            }
-
-            return 0;
-        });
-
-        // Toggle sorting direction for the next click
         if (key === 'title') {
-            isTitleAsc = !isTitleAsc;
+            return isTitleAsc ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
         } else if (key === 'year') {
-            isYearAsc = !isYearAsc;
+            return isYearAsc ? parseInt(valueB) - parseInt(valueA) : parseInt(valueA) - parseInt(valueB);
         }
-    }
 
-    // Render the table with the books data to screen
-    function renderTable() {
-        // Clear existing table rows
-        tableBody.innerHTML = '';
+        return 0;
+    });
 
-        // Create table rows and cells
-        booksData.forEach(book => {
-            const row = tableBody.insertRow();
-            for (const key in book) {
-                const cell = row.insertCell();
-                cell.textContent = book[key];
-            }
-        });
+    // Toggle sorting direction for the next click
+    if (key === 'title') {
+        isTitleAsc = !isTitleAsc;
+    } else if (key === 'year') {
+        isYearAsc = !isYearAsc;
     }
 }
 
-generateTable();
+// Render the table with the books data to screen
+function renderTable() {
+    const tableBody = document.getElementById('tableBody');
+    // Clear existing table rows
+    tableBody.innerHTML = '';
+
+    // Create table rows and cells
+    booksData.forEach(book => {
+        const row = tableBody.insertRow();
+        for (const key in book) {
+            const cell = row.insertCell();
+            cell.textContent = book[key];
+        }
+    });
+}
+
+//Function called to filter/search the data in the table
+function filterTable() {
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+
+    const filteredData = originalBooksData.filter(book =>
+        book.title.toLowerCase().includes(searchTerm) ||
+        book.author.toLowerCase().includes(searchTerm)
+    );
+
+    // Update the booksData with the filtered data
+    booksData = [...filteredData];
+    renderTable();
+}
+
+// Run the function
+generateTable().then()
+
