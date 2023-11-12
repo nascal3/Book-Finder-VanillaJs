@@ -313,11 +313,8 @@ main {
   height: 100vh;
 }
 main div {
-  display: flex;
   flex-wrap: wrap;
-  margin: 15px auto;
-  align-items: flex-start;
-  justify-content: flex-end;
+  margin: 10px;
 }
 
 footer {

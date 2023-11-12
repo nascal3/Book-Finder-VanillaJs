@@ -48,7 +48,7 @@
     {
       "title": "The Odyssey",
       "author": "Homer",
-      "year": "8th century BCE"
+      "year": "830"
     },
     {
       "title": "Crime and Punishment",
@@ -88,7 +88,7 @@
     {
       "title": "The Chronicles of Narnia",
       "author": "C.S. Lewis",
-      "year": "1950-1956"
+      "year": "1950"
     },
     {
       "title": "The Picture of Dorian Gray",
@@ -173,7 +173,7 @@
     {
       "title": "The Iliad",
       "author": "Homer",
-      "year": "8th century BCE"
+      "year": "830"
     },
     {
       "title": "Little Women",
@@ -213,7 +213,7 @@
     {
       "title": "The Odyssey",
       "author": "Homer",
-      "year": "8th century BCE"
+      "year": "800"
     },
     {
       "title": "The Brothers Karamazov",
@@ -233,62 +233,62 @@
     {
       "title": "Another Book by F. Scott Fitzgerald",
       "author": "F. Scott Fitzgerald",
-      "year": "Year Unknown"
+      "year": "1972"
     },
     {
       "title": "Yet Another Book by F. Scott Fitzgerald",
       "author": "F. Scott Fitzgerald",
-      "year": "Year Unknown"
+      "year": "1985"
     },
     {
       "title": "More Books by F. Scott Fitzgerald",
       "author": "F. Scott Fitzgerald",
-      "year": "Year Unknown"
+      "year": "1968"
     },
     {
       "title": "Another Book by J.R.R. Tolkien",
       "author": "J.R.R. Tolkien",
-      "year": "Year Unknown"
+      "year": "1958"
     },
     {
       "title": "Yet Another Book by J.R.R. Tolkien",
       "author": "J.R.R. Tolkien",
-      "year": "Year Unknown"
+      "year": "1976"
     },
     {
       "title": "More Books by J.R.R. Tolkien",
       "author": "J.R.R. Tolkien",
-      "year": "Year Unknown"
+      "year": "1965"
     },
     {
       "title": "Another Book by Ernest Hemingway",
       "author": "Ernest Hemingway",
-      "year": "Year Unknown"
+      "year": "1979"
     },
     {
       "title": "Yet Another Book by Ernest Hemingway",
       "author": "Ernest Hemingway",
-      "year": "Year Unknown"
+      "year": "1983"
     },
     {
       "title": "More Books by Ernest Hemingway",
       "author": "Ernest Hemingway",
-      "year": "Year Unknown"
+      "year": "1969"
     },
     {
       "title": "Another Book by Arthur Conan Doyle",
       "author": "Arthur Conan Doyle",
-      "year": "Year Unknown"
+      "year": "1982"
     },
     {
       "title": "Yet Another Book by Arthur Conan Doyle",
       "author": "Arthur Conan Doyle",
-      "year": "Year Unknown"
+      "year": "1973"
     },
     {
       "title": "More Books by Arthur Conan Doyle",
       "author": "Arthur Conan Doyle",
-      "year": "Year Unknown"
+      "year": "1990"
     }
   ]
 }
