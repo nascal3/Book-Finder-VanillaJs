@@ -318,7 +318,18 @@ main div {
   margin: 10px;
 }
 main div .card {
-  width: 50%;
+  width: 60%;
+}
+main div .card table th {
+  text-transform: capitalize;
+}
+main div .card table th:not(:nth-child(2)) {
+  cursor: pointer;
+}
+main div .card table th .material-icons {
+  position: relative;
+  top: 3px;
+  font-size: 16px;
 }
 
 footer {

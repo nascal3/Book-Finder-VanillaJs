@@ -1,4 +1,3 @@
-
 // Import the book data from the external dummy data books JSON file
 async function fetchBooksData() {
     const response = await fetch('script/actionScript/books.json');
@@ -16,11 +15,17 @@ async function generateTable() {
     // Create table headers
     for (const key in booksData[0]) {
         const th = document.createElement('th');
-        th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+        th.textContent = key;
+
+        // Add sort icons for "title" and "year" headers
+        if (key === 'title' || key === 'year') {
+            th.innerHTML += '&nbsp;<i class="material-icons">sort</i>';
+        }
+
         headerRow.appendChild(th);
     }
 
-    // Create table rows and cells
+    // Create table rows and cells adding data
     booksData.forEach(book => {
         const row = tableBody.insertRow();
         for (const key in book) {
