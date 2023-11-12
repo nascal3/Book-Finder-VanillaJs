@@ -15,13 +15,14 @@ main {
       table {
         th {
           text-transform: capitalize;
-          &:not(:nth-child(2)) {
-            cursor: pointer;
-          }
           .material-icons {
             position: relative;
             top: 3px;
             font-size: 16px;
+
+            &:not(:nth-child(2)) {
+              cursor: pointer;
+            }
           }
         }
       }

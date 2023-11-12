@@ -323,13 +323,13 @@ main div .card {
 main div .card table th {
   text-transform: capitalize;
 }
-main div .card table th:not(:nth-child(2)) {
-  cursor: pointer;
-}
 main div .card table th .material-icons {
   position: relative;
   top: 3px;
   font-size: 16px;
+}
+main div .card table th .material-icons:not(:nth-child(2)) {
+  cursor: pointer;
 }
 
 footer {
