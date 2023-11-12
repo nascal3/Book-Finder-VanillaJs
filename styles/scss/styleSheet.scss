@@ -2,11 +2,16 @@
 
 main {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 
   div {
     flex-wrap: wrap;
     margin: 10px;
+
+    .card {
+      width: 50%;
+    }
   }
 }
 

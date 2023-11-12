@@ -310,11 +310,15 @@ template {
 
 main {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 main div {
   flex-wrap: wrap;
   margin: 10px;
+}
+main div .card {
+  width: 50%;
 }
 
 footer {
