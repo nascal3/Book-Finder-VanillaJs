@@ -9,14 +9,16 @@ async function fetchBooksData() {
 let isTitleAsc = true;
 let isYearAsc = true;
 
+//Original array to store the books data
+// from fetch of data
+let originalBooksData = [];
+
 //Temp holder array to store the books data to
 // avoid mutating the original array data
 let booksData = [];
 
-let originalBooksData = [];
-
 //Create the table and populate data into it
-async function generateTable() {
+const generateTable = async () => {
     const headerRow = document.getElementById('headerRow');
 
     // Fetch original book data from the external JSON file
@@ -45,7 +47,7 @@ async function generateTable() {
 }
 
 // Sort the data based on the sorting configuration
-function sortData(key) {
+const sortData = (key) => {
     booksData.sort((a, b) => {
         const valueA = a[key].toUpperCase();
         const valueB = b[key].toUpperCase();
@@ -68,7 +70,7 @@ function sortData(key) {
 }
 
 // Render the table with the books data to screen
-function renderTable() {
+const renderTable = () => {
     const tableBody = document.getElementById('tableBody');
     // Clear existing table rows
     tableBody.innerHTML = '';
@@ -84,7 +86,7 @@ function renderTable() {
 }
 
 //Function called to filter/search the data in the table
-function filterTable() {
+const filterTable = () => {
     const searchTerm = document.getElementById('search').value.toLowerCase();
 
     const filteredData = originalBooksData.filter(book =>
