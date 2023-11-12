@@ -5,6 +5,7 @@ async function fetchBooksData() {
     return data.books;
 }
 
+
 // Sorting configuration
 let isTitleAsc = true;
 let isYearAsc = true;
@@ -16,6 +17,13 @@ let originalBooksData = [];
 //Temp holder array to store the books data to
 // avoid mutating the original array data
 let booksData = [];
+
+// Display current year
+const displayCurrentYear = () => {
+    const currentYear = new Date().getFullYear();
+    document.querySelector('#dateYear').textContent = currentYear.toString();
+}
+displayCurrentYear()
 
 //Create the table and populate data into it
 const generateTable = async () => {
