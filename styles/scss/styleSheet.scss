@@ -1,5 +1,12 @@
 @import "colors";
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 main {
   position: relative;
   min-height: 100vh;
@@ -8,6 +15,7 @@ main {
   div {
     flex-wrap: wrap;
     margin: 10px;
+    top: 60px;
 
     .card {
       width: 60%;
@@ -39,6 +47,7 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  margin-top: 75px;
 
   padding: 10px;
   color: $white;
